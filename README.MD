@@ -32,12 +32,16 @@ This project started as a basic trading app concept and evolved into a comprehen
 
 ## Architecture
 
-Frontend (React/TypeScript) Backend (Node.js/Express) External APIs Database (MongoDB)
-├── Wallet Connection ├── Order Controller ├── Binance API ├── Orders Collection
-├── Trading Interface ├── User Controller └── Price Service ├── Users Collection
-├── Order Management ├── Balance Management └── Transactions Collection
-├── Real-time Updates ├── P&L Calculations  
-└── Market Data Display └── Transaction Logging
+```
+
+Frontend (React/TypeScript)    Backend (Node.js/Express)     External APIs          Database (MongoDB)
+├── Wallet Connection          ├── Order Controller          ├── Binance API        ├── Orders Collection
+├── Trading Interface          ├── User Controller           └── Price Service      ├── Users Collection
+├── Order Management           ├── Balance Management                               └── Transactions Collection
+├── Real-time Updates          ├── P&L Calculations
+└── Market Data Display        └── Transaction Logging
+
+```
 
 ## Key Features Implemented
 
@@ -198,12 +202,12 @@ npm run dev  # Runs on port 8080
 
 ## Achievement Summary
 
-✅ **Complete Trading Engine** - From concept to working platform  
-✅ **Smart Balance Management** - Real-time locking and P&L  
-✅ **Professional UI** - Trading-grade interface  
-✅ **Wallet Integration** - Seamless MetaMask connection  
-✅ **Real-time Data** - Live prices and order book  
-✅ **Audit Trail** - Complete transaction logging  
-✅ **P&L Calculations** - Smart profit/loss tracking
+**Complete Trading Engine** - From concept to working platform  
+**Smart Balance Management** - Real-time locking and P&L  
+**Professional UI** - Trading-grade interface  
+**Wallet Integration** - Seamless MetaMask connection  
+**Real-time Data** - Live prices and order book  
+**Audit Trail** - Complete transaction logging  
+**P&L Calculations** - Smart profit/loss tracking
 
 This project demonstrates a complete understanding of trading systems, from order management to balance calculations, with a professional-grade implementation.
