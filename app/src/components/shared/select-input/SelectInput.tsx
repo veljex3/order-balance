@@ -5,14 +5,14 @@ interface IOption {
   value: string | number;
 }
 
-interface SelectProps {
+interface SelectInputProps {
   options: IOption[];
   value: string | number;
   onChange: (value: string | number) => void;
   disabled?: boolean;
 }
 
-const Select: React.FC<SelectProps> = ({
+const SelectInput: React.FC<SelectInputProps> = ({
   options,
   onChange,
   value,
@@ -57,4 +57,4 @@ const Select: React.FC<SelectProps> = ({
   );
 };
 
-export default Select;
+export default SelectInput;

@@ -5,7 +5,7 @@ import {
   OrderStatus,
   orderStatusLabel,
   orderTypeLabel,
-} from "../../@types/api/order.type";
+} from "../../types/api/order.type";
 
 export interface OrderHistoryProps {
   data: IOrderHistory[];

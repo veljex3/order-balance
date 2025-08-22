@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const databaseURL = "mongodb://127.0.0.1:27017/OrderBalance";
+const uri = process.env.DATABASE_URI;
 
 const connectDatabase = async () => {
   try {
-    const connection = await mongoose.connect(databaseURL); // will change later
+    const connection = await mongoose.connect(uri, {});
 
     console.log(`MongoDB Connected: ${connection.connection.host}`);
   } catch (err) {

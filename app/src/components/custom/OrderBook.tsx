@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { ISymbol } from "../../@types";
 import OrderBookTable from "./OrderBookTable";
-import { IOrder, OrderType } from "../../@types/api/order.type";
+import { IOrder, OrderType } from "../../types/api/order.type";
 import { setCurrentSymbolPrice } from "../../domain/store";
 import { useDispatch } from "react-redux";
+import { ISymbol } from "types/global/symbol.type";
 
 interface OrderBookProps {
   symbol: ISymbol;
@@ -19,21 +19,36 @@ const OrderBook: React.FC<OrderBookProps> = ({
   const [buyData, setBuyData] = useState([]);
   const [sellData, setSellData] = useState([]);
   const [currentPrice, setCurrentPrice] = useState(0);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // Convert symbol format for Binance WebSocket (BTC/USDT -> btcusdt)
+    const binanceSymbol = symbol.symbol.replace("/", "").toLowerCase();
+
     let depthSocket: WebSocket | null = new WebSocket(
-      `wss://stream.binance.com/stream?streams=${symbol.symbol}@depth20`
+      `wss://stream.binance.com/stream?streams=${binanceSymbol}@depth20`
     );
     let tickerSocket: WebSocket | null = new WebSocket(
-      `wss://stream.binance.com/ws/${symbol.symbol}@ticker`
+      `wss://stream.binance.com/ws/${binanceSymbol}@ticker`
     );
 
+    let depthConnected = false;
+    let tickerConnected = false;
+
+    const checkReady = () => {
+      if (depthConnected && tickerConnected) {
+        onSocketMount();
+      }
+    };
+
     depthSocket.onopen = () => {
-      onSocketMount();
+      depthConnected = true;
+      checkReady();
     };
     tickerSocket.onopen = () => {
-      onSocketMount();
+      tickerConnected = true;
+      checkReady();
     };
 
     depthSocket.onmessage = (event: MessageEvent) => {
@@ -99,6 +114,7 @@ const OrderBook: React.FC<OrderBookProps> = ({
       tickerSocket = null;
     };
   }, [symbol.symbol]);
+
   return (
     <div className="border-slate-500 bg-slate-900 border rounded-xl mb-4">
       <div className="w-full xl:w-auto flex-grow px-4 py-2 font-medium">

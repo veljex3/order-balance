@@ -1,5 +1,5 @@
 import React from "react";
-import { IOrder, OrderType } from "../../@types/api/order.type";
+import { IOrder, OrderType } from "../../types/api/order.type";
 
 interface OrderBookTableProps {
   orderData: IOrder[];

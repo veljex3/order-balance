@@ -1,7 +1,7 @@
 import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { symbols } from "../utils/constant";
-import { IOrderHistory } from "../@types/api/order.type";
-import { ISymbol } from "../@types";
+import { IOrderHistory } from "../types/api/order.type";
+import { ISymbol } from "../types/global/symbol.type";
 
 export interface IStoreState {
   balance1: number;
@@ -27,7 +27,7 @@ const orderSlice = createSlice({
       console.log(action.payload);
       state.balance1 = action.payload;
     },
-    setBalace2(state, action: PayloadAction<number>) {
+    setBalance2(state, action: PayloadAction<number>) {
       state.balance2 = action.payload;
     },
     setCurrentSymbolPrice(state, action: PayloadAction<number>) {
@@ -46,7 +46,7 @@ const orderSlice = createSlice({
 
 export const {
   setBalance1,
-  setBalace2,
+  setBalance2,
   setCurrentSymbolPrice,
   setOrders,
   setCurrentSymbol,
