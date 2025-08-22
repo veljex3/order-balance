@@ -2,7 +2,7 @@
 
 A full-stack demo trading application with real-time order management, balance tracking, and P&L calculations. Built with React/TypeScript frontend and Node.js/Express backend.
 
-## 🚀 What Was Built
+## What Was Built
 
 This project started as a basic trading app concept and evolved into a comprehensive trading platform with advanced features:
 
@@ -30,20 +30,16 @@ This project started as a basic trading app concept and evolved into a comprehen
 - **Live Order Book**: Real-time market data from Binance
 - **Trading Charts**: Integrated TradingView charts
 
-## 🏗️ Architecture
+## Architecture
 
-```
-Frontend (React/TypeScript)     Backend (Node.js/Express)     External APIs
-├── Wallet Connection          ├── Order Controller           ├── Binance API
-├── Trading Interface          ├── User Controller            └── Price Service
-├── Order Management           ├── Balance Management
-├── Real-time Updates          ├── P&L Calculations          Database (MongoDB)
-└── Market Data Display        └── Transaction Logging        ├── Orders Collection
-                                                             ├── Users Collection
-                                                             └── Transactions Collection
-```
+Frontend (React/TypeScript) Backend (Node.js/Express) External APIs Database (MongoDB)
+├── Wallet Connection ├── Order Controller ├── Binance API ├── Orders Collection
+├── Trading Interface ├── User Controller └── Price Service ├── Users Collection
+├── Order Management ├── Balance Management └── Transactions Collection
+├── Real-time Updates ├── P&L Calculations  
+└── Market Data Display └── Transaction Logging
 
-## 💡 Key Features Implemented
+## Key Features Implemented
 
 ### **Smart Order Management**
 
@@ -73,7 +69,7 @@ When canceling limit orders, the system calculates what you gained or lost:
 - Balances update when orders are canceled (P&L applied + funds unlocked)
 - All balance changes are logged for audit purposes
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 
 ### **Backend Stack**
 
@@ -97,7 +93,7 @@ When canceling limit orders, the system calculates what you gained or lost:
 - **User Service**: Balance management and user operations
 - **Transaction Service**: Complete audit logging
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 order-balance/
@@ -121,7 +117,7 @@ order-balance/
 └── README.MD                     # This documentation
 ```
 
-## 🚦 API Endpoints
+## API Endpoints
 
 ### **Order Management**
 
@@ -136,7 +132,7 @@ order-balance/
 - `POST /api/user/balance/update/:address` - Update balances
 - `POST /api/user/balance/reset/:address` - Reset to demo balances
 
-## 🎯 How It Works
+## How It Works
 
 ### **Placing a Limit Order**
 
@@ -166,14 +162,13 @@ order-balance/
 5. Transaction logged for audit
 6. Order status set to "Filled"
 
-## 🔧 Setup & Installation
+## Setup & Installation
 
 ### **Backend Setup**
 
 ```bash
 cd server
 npm install
-# Configure .env with MongoDB connection
 npm start  # Runs on port 5000
 ```
 
@@ -182,7 +177,7 @@ npm start  # Runs on port 5000
 ```bash
 cd app
 npm install
-npm run dev  # Runs on port 8081
+npm run dev  # Runs on port 8080
 ```
 
 ### **Requirements**
@@ -192,7 +187,7 @@ npm run dev  # Runs on port 8081
 - MetaMask browser extension
 - Internet connection (for real-time prices)
 
-## 🎮 Usage
+## Usage
 
 1. **Connect Wallet**: Click "Connect Wallet" and approve MetaMask connection
 2. **View Balances**: See your demo balances in the wallet panel
@@ -201,7 +196,7 @@ npm run dev  # Runs on port 8081
 5. **Cancel Orders**: Cancel pending orders to see P&L calculation
 6. **Track Balance**: Watch balances update in real-time
 
-## 🏆 Achievement Summary
+## Achievement Summary
 
 ✅ **Complete Trading Engine** - From concept to working platform  
 ✅ **Smart Balance Management** - Real-time locking and P&L  
