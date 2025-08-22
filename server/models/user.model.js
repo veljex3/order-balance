@@ -71,7 +71,7 @@ userSchema.methods.resetBalances = function () {
     ETH: 10.0,
     LTC: 50.0,
     XRP: 1000.0,
-    USDT: 10000.0,
+    USDT: 1000000.0,
   };
 };
 
